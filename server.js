@@ -81,6 +81,10 @@ app.get('/logs', async (req, res) => {
   const logs = await Log.find().sort({ viewedAt: -1 });
   res.json(logs);
 });
+app.get('/', async (req, res) => {
+
+  res.send('email is running')
+});
 
 app.listen(process.env.PORT, () => {
   console.log(`Server running on port ${process.env.PORT}`);
